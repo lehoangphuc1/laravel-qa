@@ -40,4 +40,10 @@ class User extends Authenticatable
     {
         return $this->hasMany(Question::class); // 1 user co nhieu san pham
     }
+
+     public function getUrlAttribute()
+    {
+        /*return route("questions.show",$this->id);*/
+        return '#';
+    }
 }
