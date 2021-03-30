@@ -36,13 +36,8 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
-    public function question ()
+    public function questions()
     {
         return $this->hasMany(Question::class); // 1 user co nhieu san pham
-    }
-     public function setTitleAttribute($value)
-    {
-        $this->attributes['title'] = $value;
-        $this->attributes['slug'] = str_slug($value);
     }
 }
